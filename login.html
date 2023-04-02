@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+		<!--========================================================== -->
+                        <!-- ENCABEZADO -->
+  <!--========================================================== -->
+  <style>
+    /* Estilos para el header */
+    header {
+        background-color: rgb(206, 71, 71); /* Color de fondo */
+        height: 80px; /* Altura del header */
+        display: block; /* Convertir el header en un contenedor flexible */
+        align-items: center; /* Alinear verticalmente los elementos dentro del header */
+        justify-content: center; /* Alinear horizontalmente los elementos dentro del header */
+    }
+    
+    /* Estilos para el logo */
+    .logo {
+        height: 50px; /* Altura del logo */
+        width: 150px; /* Ancho del logo */
+    }
+</style>
+</head>
+<body>
+
+<!-- Header -->
+<a href="index.html" style="text-align: center; display: block; background-color: rgba(255, 249, 249, 0);">
+<img src="img/logo.gif" alt="Logo de mi empresa" class="logo">
+</a>
+  <head>
+    <title>Inicio de sesión</title>
+    <link rel="stylesheet" type="text/css" href="sesion.css">
+  </head>
+  <body>
+    <div class="container">
+      <h1>Iniciar sesión</h1>
+      <form>
+        <div class="form-group">
+          <label for="username">Nombre de usuario:</label>
+          <input type="text" id="username" name="username">
+        </div>
+        <div class="form-group">
+          <label for="password">Contraseña:</label>
+          <input type="password" id="password" name="password">
+        </div>
+        <a href="index.html"
+        <button type="submit" class="btn">Iniciar sesión</button>
+    </a>
+        <span>Si no tienes cuenta registrate <a class="registro" href="register.html">Aqui</a></span>
+      </form>
+    </div>
+  </body>
+</html>
