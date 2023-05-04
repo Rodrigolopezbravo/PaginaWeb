@@ -6,9 +6,6 @@ body {
     font-family: "monserrat", sans-serif;
     overflow-x: hidden;
 }
-/*===================MENU==========================*/
-
-
 
 /*===================MENU==========================*/
 
@@ -44,7 +41,7 @@ body {
     background-color: #f3f3f3;
     display:flex;
     justify-content: center; 
-    padding-bottom: 300px; 
+    padding-bottom: 50px; 
 }
 
 .mapa {
@@ -201,20 +198,7 @@ footer p{
 }
 
 /* Globales */
-*::after,
-*::before,
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
 
-body{
-    margin: 0 auto;
-    max-width: 1200px;
-    font-family: 'Lato';
-    color: #333;
-}
 
 .icon-cart{
     width: 40px;
