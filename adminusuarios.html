@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Administrar usuarios</title>
+    <link rel="stylesheet" href="/adminusuar.css">
+  </head>
+  <body>
+    <nav class="navbar">
+      <div class="navbar-container">
+        <a href="#" class="navbar-logo">Administrar Usuarios</a>
+        <ul class="navbar-menu">
+          <li><a href="#">Inicio</a></li>
+          <li><a href="#">Usuarios</a></li>
+          <li><a href="#">Configuración</a></li>
+        </ul>
+      </div>
+    </nav>
+    <div class="background">
+      <div class="blur-background"></div>
+    </div>
+    <div class="content">
+      <div class="container">
+        <h1>Lista de usuarios</h1>
+        <form id="add-user-form">
+          <input type="text" id="name-input" placeholder="Nombre">
+          <input type="email" id="email-input" placeholder="Correo electrónico">
+          <button type="submit">Agregar usuario</button>
+        </form>
+        <ul id="user-list"></ul>
+      </div>
+    </div>
+    <script src="/app.js"></script>
+  </body>
+</html>
