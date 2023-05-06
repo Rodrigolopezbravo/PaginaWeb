@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>adminuser</title>
+    <link rel="stylesheet" href="/adminproduc.css" />
+  </head>
+  <body>
+    <nav>
+      <ul>
+        <li><a href="/index.html">Inicio</a></li>
+        <li><a href="/adminproductos.html">Administracion de Productos</a></li>
+        <li><a href="#">Administracion de Usuarios</a></li>
+      </ul>
+    </nav>
+    <header>
+      <h1>PLANTLIFE</h1>
+      <p>ADMINISTRACION DE USUARIOS</p>
+    </header>
+    <main>
+      <h2>Nuestros usuarios</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Nombre</th>
+            <th>Correo</th>
+            <th>Tipo de usuario</th>
+            <th>Acciones</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Nicolás Chávez</td>
+            <td>nico.chavez@example.com</td>
+            <td>Administrador</td>
+            <td>
+              <button>Editar</button>
+              <button>Eliminar</button>
+            </td>
+          </tr>
+          <tr>
+            <td>Rodrigo López</td>
+            <td>rodrigo.lopez@example.com</td>
+            <td>Administrador</td>
+            <td>
+              <button>Editar</button>
+              <button>Eliminar</button>
+            </td>
+          </tr>
+          <tr>
+            <td>José Olivares</td>
+            <td>jose.olivares@example.com</td>
+            <td>Administrador</td>
+            <td>
+              <button>Editar</button>
+              <button>Eliminar</button>
+            </td>
+          </tr>
+          <tr>
+            <td>Juan Pablo Ramírez</td>
+            <td>juan.ramirez@example.com</td>
+            <td>Administrador</td>
+            <td>
+              <button>Editar</button>
+              <button>Eliminar</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <form>
+        <h3>Agregar un nuevo usuario</h3>
+        <div>
+          <label for="nombre">Nombre:</label>
+          <input type="text" id="nombre" name="nombre" required />
+        </div>
+        <div>
+          <label for="correo">Correo:</label>
+          <input type="email" id="correo" name="correo" required />
+        </div>
+        <div>
+          <label for="tipo">Tipo de usuario:</label>
+          <select id="tipo" name="tipo" required>
+            <option value="">Selecciona un tipo de usuario</option>
+            <option value="Administrador">Administrador</option>
+            <option value="Usuario">Usuario</option>
+          </select>
+        </div>
+        <button type="submit">Agregar</button>
+      </form>
+    </main>
+    <footer>
+      <ul>
+        <li><a href="#">Política de privacidad</a></li>
+        <li
+  
+  
+      
+        

@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Carrito de Compras - Plantas Fantásticas</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" integrity="sha512-ljWkV8/VxLhakH/W7jKieN4d4LEKjzAT6vcVH9Z/kY6SgPXtmvGK3qrlL5y5uvvmfKz0C5Ws2Q0M9XJupjKf8g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat" />
+
+    <style>
+/* Estilos para el header */
+    header {
+		background-color: rgba(255, 244, 244, 0.671); /* Color de fondo */
+		height: 80px; /* Altura del header */
+		display: block; /* Convertir el header en un contenedor flexible */
+		align-items: center; /* Alinear verticalmente los elementos dentro del header */
+		justify-content: center; /* Alinear horizontalmente los elementos dentro del header */
+	}
+	
+	/* Estilos para el logo */
+	.logo {
+		height: 50px; /* Altura del logo */
+		width: 150px; /* Ancho del logo */
+	}
+    
+      body {
+        background-color: #f5f5f5;
+        font-family: "Montserrat", sans-serif;
+      }
+      
+      .cart-container {
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 20px;
+        background-color: #fff;
+        box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      }
+      
+      .cart-header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 10px;
+        background-color: #00b894;
+        color: #fff;
+      }
+      
+      .cart-header h2 {
+        margin: 0;
+        font-size: 24px;
+        font-weight: 700;
+        text-transform: uppercase;
+      }
+      
+      .cart-item {
+        display: flex;
+        align-items: center;
+        padding: 10px;
+        border-bottom: 1px solid #eee;
+        transition: all 0.2s ease-in-out;
+      }
+      
+      .cart-item:hover {
+        background-color: #e3f9f0;
+      }
+      
+      .cart-item img {
+        max-width: 100px;
+        margin-right: 20px;
+      }
+      
+      .cart-item-info {
+        flex: 1;
+      }
+      
+      .cart-item-info h3 {
+        margin: 0;
+        font-size: 18px;
+        font-weight: 700;
+        text-transform: uppercase;
+      }
+      
+      .cart-item-info p {
+        margin: 5px 0 0;
+        font-size: 16px;
+        color: #888;
+      }
+      
+      .cart-item-quantity {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 80px;
+      }
+      
+      .cart-item-quantity input {
+        width: 40px;
+        text-align: center;
+        border: none;
+        border-bottom: 1px solid #ccc;
+        font-size: 16px;
+        font-weight: 700;
+        color: #888;
+        margin: 0 10px;
+      }
+      
+      .cart-item-delete {
+        font-size: 24px;
+        color: #e74c3c;
+        cursor: pointer;
+        transition: all 0.2s ease-in-out;
+      }
+      
+      .cart-item-delete:hover {
+        transform: scale(1.2);
+      }
+      
+      .cart-total {
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        margin-top: auto;
+      }
+
+      .cart-total p {
+        margin: 0 10px 0 0;
+        font-size: 16px;
+        font-weight: 700;
+        color: #888;
+      }
+      
+      .cart-total strong {
+        font-size: 24px;
+        font-weight: 700;
+        color: #00b894;
+      }
+      
+      .cart-buttons {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-top: 20px;
+      }
+      
+      .cart-buttons button {
+        padding: 10px 20px;
+        border: none;
+        border-radius: 5px;
+        font-size: 16px;
+        font-weight: 700;
+        color: #fff;
+        background-color: #00b894;
+        cursor: pointer;
+        transition: all 0.2s ease-in-out;
+      }
+      
+      .cart-buttons button:hover {
+        transform: scale(1.1);
+      }
+    </style>
+  </head>
+  <!-- Header -->
+<a href="index.html" style="text-align: center; display: block; background-color: rgba(255, 244, 244, 0.671);">
+    <img src="img/logo.gif" alt="Logo de mi empresa" class="logo">
+    </a>
+    
+    
+  <body>
+    <div class="cart-container">
+      <div class="cart-header">
+        <h2>Carrito de Compras</h2>
+        <span><img src="/img/carrito.ñ.png" alt="Plant" width="50" height="50" /></span>
+      </div>
+      <div class="cart-item">
+        <img src="/img/planta1.png" alt="Plant" />
+        <div class="cart-item-info">
+          <h3>Planta de Interior</h3>
+          <p>$20.00</p>
+        </div>
+        <div class="cart-item-quantity">
+          <button>-</button>
+          <input type="text" value="1" />
+          <button>+</button>
+        </div>
+        <div class="cart-item-delete">
+          <i class="fa fa-trash"></i>
+        </div>
+      </div>
+      <div class="cart-total">
+        <p>Total:</p>
+        <strong>$20.00</strong>
+      </div>
+      <div class="cart-buttons">
+        <button>Seguir Comprando</button>
+        <button>Proceder al Pago</button>
+      </div>
+    </div>
+  </body>
+</html>
+

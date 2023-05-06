@@ -1,0 +1,298 @@
+/* Import Google Fonts */
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap");
+
+/* Global styles */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-family: "Montserrat", sans-serif;
+  background-color: #f5f5f5;
+}
+
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 4rem 2rem;
+}
+
+/* Navigation styles */
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2rem;
+  background-color: #ffffff;
+  box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+nav ul {
+  display: flex;
+  list-style: none;
+}
+
+nav ul li {
+  margin-right: 2rem;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: #222222;
+  font-size: 1.6rem;
+  font-weight: 600;
+  transition: color 0.3s ease-in-out;
+}
+
+nav ul li a:hover {
+  color: #007aff;
+}
+
+/* Header styles */
+header {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 50vh;
+  background-image: url('img/Inicio1.jpg');
+  background-size: cover;
+  background-position: center;
+}
+
+header h1 {
+  color: #ffffff;
+  font-size: 6rem;
+  font-weight: 700;
+  text-shadow: 0px 2px 6px rgba(0, 0, 0, 0.5);
+}
+
+header p {
+  color: #ffffff;
+  font-size: 2rem;
+  font-weight: 500;
+  text-shadow: 0px 2px 6px rgba(0, 0, 0, 0.5);
+  margin-top: 2rem;
+}
+
+header button {
+  background-color: #007aff;
+  color: #ffffff;
+  font-size: 1.8rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  padding: 1rem 2rem;
+  border: none;
+  border-radius: 4px;
+  margin-top: 4rem;
+  cursor: pointer;
+  box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.3);
+  transition: background-color 0.3s ease-in-out;
+}
+
+header button:hover {
+  background-color: #0066ff;
+}
+
+/* Main styles */
+main {
+  margin-top: 6rem;
+}
+
+main h2 {
+  font-size: 3rem;
+  font-weight: 600;
+  color: #222222;
+  margin-bottom: 2rem;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+/* Estilos para la tabla */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 3rem;
+  }
+  
+  th {
+    font-weight: 700;
+    text-align: left;
+    padding: 1rem;
+    background-color: #f5f5f5;
+    border-bottom: 2px solid #ddd;
+  }
+  
+  td {
+    padding: 1rem;
+    border-bottom: 1px solid #ddd;
+  }
+  
+  /* Estilos para el formulario */
+  form {
+    margin-top: 3rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  form div {
+    margin-top: 1rem;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  form div label {
+    width: 8rem;
+    font-weight: 600;
+  }
+  
+  form div input {
+    padding: 0.5rem;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+    font-size: 1.6rem;
+    margin-left: 2rem;
+    width: 30rem;
+  }
+  
+  form button[type="submit"] {
+    margin-top: 2rem;
+    padding: 1rem 2rem;
+    background-color: #007aff;
+    color: #fff;
+    font-weight: 600;
+    font-size: 1.8rem;
+    border-radius: 4px;
+    border: none;
+    cursor: pointer;
+  }
+  
+  form button[type="submit"]:hover {
+    background-color: #006fe6;
+  }
+  
+  /* Estilos para el footer */
+  footer {
+    margin-top: 6rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  footer ul {
+    list-style: none;
+    display: flex;
+    margin-bottom: 2rem;
+  }
+  
+  footer ul li:not(:last-child) {
+    margin-right: 2rem;
+  }
+  
+  footer ul li a {
+    color: #007aff;
+    font-weight: 600;
+    text-decoration: none;
+  }
+  
+  footer p {
+    font-size: 1.6rem;
+    color: #666;
+  }
+
+/* Estilo de los botones */
+button {
+    background-color: #007aff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    padding: 8px 12px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  button:hover {
+    background-color: #0054a6;
+  }
+  
+  /* Estilo de los botones de tipo de usuario */
+  .tipo {
+    background-color: #34c759;
+  }
+  
+  .tipo:hover {
+    background-color: #24a34f;
+  }
+  
+  /* Estilo de los botones de editar y eliminar */
+  .editar {
+    background-color: #ff9500;
+  }
+  
+  .editar:hover {
+    background-color: #d77d00;
+  }
+  
+  .eliminar {
+    background-color: #ff3b30;
+  }
+  
+  .eliminar:hover {
+    background-color: #c4261d;
+  }
+  
+  /* Animación de la lista desplegable de tipos de usuario */
+  select {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background-image: url('data:image/svg+xml,%3Csvg fill="%23007aff" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"%3E%3Cpath d="M7.293 9.293a1 1 0 0 0-1.414 1.414l4 4a1 1 0 0 0 1.414 0l4-4a1 1 0 0 0-1.414-1.414L12 11.586l-4.293-4.293z" fill-rule="evenodd"/%3E%3C/svg%3E');
+    background-repeat: no-repeat;
+    background-position: right 10px center;
+    padding: 8px 40px 8px 12px;
+    font-size: 16px;
+    border-radius: 4px;
+    border: none;
+    color: #333;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+  
+  select:hover, select:focus {
+    background-color: #f2f2f2;
+  }
+  
+  /* Estilo del mensaje de agregado satisfactoriamente */
+  #agregado {
+    position: fixed;
+    bottom: 16px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #007aff;
+    color: white;
+    border-radius: 4px;
+    padding: 8px 16px;
+    font-size: 16px;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+  }
+  
+  #agregado.mostrar {
+    opacity: 1;
+    visibility: visible;
+  }
+  
