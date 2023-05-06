@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ADMINprductoss</title>
+    <link rel="stylesheet" href="/adminproduc.css" />
+  </head>
+  <body>
+    <nav>
+      <ul>
+        <li><a href="/index.html">Inicio</a></li>
+        <li><a href="#">Administracion de Productos</a></li>
+        <li><a href="/adminusuarios.html">Administracion de Usuarios</a></li>
+      </ul>
+    </nav>
+    <header>
+      <h1>PLANTLIFE</h1>
+      <p>ADMINISTRACION DE PRODUCTOS.</p>
+    </header>
+    <main>
+      <h2>Nuestros productos</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Producto</th>
+            <th>Descripción</th>
+            <th>Precio</th>
+            <th>Cantidad</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Producto 1</td>
+            <td>Descripción del producto 1</td>
+            <td>$9.99</td>
+            <td>10</td>
+          </tr>
+          <tr>
+            <td>Producto 2</td>
+            <td>Descripción del producto 2</td>
+            <td>$14.99</td>
+            <td>5</td>
+          </tr>
+          <tr>
+            <td>Producto 3</td>
+            <td>Descripción del producto 3</td>
+            <td>$19.99</td>
+            <td>2</td>
+          </tr>
+        </tbody>
+      </table>
+      <form>
+        <h3>Agregar un nuevo producto</h3>
+        <div>
+          <label for="nombre">Nombre:</label>
+          <input type="text" id="nombre" name="nombre" required />
+        </div>
+        <div>
+          <label for="descripcion">Descripción:</label>
+          <input type="text" id="descripcion" name="descripcion" required />
+        </div>
+        <div>
+          <label for="precio">Precio:</label>
+          <input type="number" id="precio" name="precio" required />
+        </div>
+        <div>
+          <label for="cantidad">Cantidad:</label>
+          <input type="number" id="cantidad" name="cantidad" required />
+        </div>
+        <button type="submit">Agregar</button>
+      </form>
+    </main>
+    <footer>
+      <ul>
+        <li><a href="#">Política de privacidad</a></li>
+        <li><a href="#">Términos y condiciones</a></li>
+        <li><a href="#">Acerca de nosotros</a></li>
+      </ul>
+      <p>&copy; 2023 PLANTLIFE. Todos los derechos reservados.</p>
+    </footer>
+  </body>
+</html>
