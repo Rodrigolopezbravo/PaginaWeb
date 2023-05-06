@@ -1,0 +1,92 @@
+/* Estilos generales */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f8f8f8;
+    margin: 0;
+    padding: 0;
+  }
+  
+  h1 {
+    margin-top: 0;
+    font-size: 2rem;
+    text-align: center;
+    color: #333;
+  }
+  
+  form {
+    max-width: 500px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.2);
+  }
+  
+  label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #333;
+  }
+  
+  input[type="text"],
+  input[type="number"],
+  input[type="month"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  
+  button[type="submit"] {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    background-color: #4CAF50;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  button[type="submit"]:hover {
+    background-color: #3e8e41;
+  }
+  
+  /* Estilos específicos para WebPay */
+  #nombre-tarjeta,
+  #numero-tarjeta,
+  #fecha-expiracion,
+  #cvv,
+  #monto {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    border: none;
+    background: none;
+    font-family: 'WebPay Icons';
+    font-size: 32px;
+    line-height: 1.2;
+    color: #333;
+    margin-bottom: 20px;
+  }
+  
+  #nombre-tarjeta:before {
+    content: "\E001";
+  }
+  
+  #numero-tarjeta:before {
+    content: "\E002";
+  }
+  
+  #fecha-expiracion:before {
+    content: "\E003";
+  }
+  
+  #cvv:before {
+    content: "\E004";
+  }
+  
+  #monto:before {
+    content: "\E005";
+  }
