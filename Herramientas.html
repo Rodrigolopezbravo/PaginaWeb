@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="es">
 	<head>
@@ -73,7 +74,7 @@
 			<a class="nav-link text-white" href="Contacto.html">Contactanos</a>
 		  </li>
 		</ul>
-		<a href="login.html" 
+		<a href="login.html" >
 		<button class="btn btn-primary btn-primary-outline-success text-light" >Ingresar</button>
 	  	</a>
 			<div class="container-icon">
@@ -87,93 +88,13 @@
 				</div>
 
   </nav>
-                    </div>
-				</div>
-			</div>
-		<div class="container-items">
-			<div class="item">
-				<figure>
-					<img
-						src="img/cinturon jardinero.jpg"
-						alt="producto"
-					/>
-				</figure>
-				<div class="info-product">
-					<h2>Cinturon Jardinero Profesional</h2>
-					<p class="price">$39.900</p>
-					<button>Añadir al carrito</button>
-				</div>
-			</div>
-			<div class="item">
-				<figure>
-					<img
-						src="img/Multifuncional Para Jardin.jpg"
-						alt="producto"
-					/>
-				</figure>
-				<div class="info-product">
-					<h2>Multifuncional Para Jardin</h2>
-					<p class="price">$279.990</p>
-					<button>Añadir al carrito</button>
-				</div>
-			</div>
-			<div class="item">
-				<figure>
-					<img
-						src="img/orilladora electrica.jpg"
-						alt="producto"
-					/>
-				</figure>
-				<div class="info-product">
-					<h2>Orilladora Electrica 350 Watts</h2>
-					<p class="price">$25.990</p>
-					<button>Añadir al carrito</button>
-				</div>
-			</div>
-			<div class="item">
-				<figure>
-					<img
-						src="img/kit herramientas para jardineria.jpg"
-						alt="producto"
-					/>
-				</figure>
-				<div class="info-product">
-					<h2>Kit Herramientas para Jardineria</h2>
-					<p class="price">$15.490</p>
-					<button>Añadir al carrito</button>
-				</div>
-			</div>
-			<div class="item">
-				<figure>
-					<img
-						src="img/soplador aspirador electrico.jpg"
-						alt="producto"
-					/>
-				</figure>
-				<div class="info-product">
-					<h2>Soplador Aspirador Electrico</h2>
-					<p class="price">$47.990</p>
-					<button>Añadir al carrito</button>
-				</div>
-			</div>
-			<div class="item">
-				<figure>
-					<img
-						src="img/cortador de pasto.jpg"
-						alt="producto"
-					/>
-				</figure>
-				<div class="info-product">
-					<h2>Cortadora de Pasto 30CM</h2>
-					<p class="price">$31.990</p>
-					<button>Añadir al carrito</button>
-				</div>
-			</div>
+
+		<div id="tablaProductos" class="container-card">
+		
 		</div>
 
         <script src="index.js"></script>
 	</body>
-
 
 <!--========================================================== -->
                         <!--FOOTER-->
@@ -193,6 +114,64 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous"></script> 
     <script src="https://unpkg.com/typewriter-effect@latest/dist/core.js"></script>
     <script src="main.js"></script>
+	<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>   
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.min.js" integrity="sha384-+sLIOodYLS7CIrQpBjl+C7nPvqq+FbNUBDunl/OZv93DB7Ln/533i8e/mZXLi/P+" crossorigin="anonymous"></script>
+ 
+
+		<!-- sweetalert2 -->
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<!--- Mis scripts -->
+<!-- comunes  -->
+<script src="assets/comunes.js"></script>
+<script> 
+
+
+	//buscar los productos en la api
+	$(document).ready(function() {
+	  //addCard();
+	  getProductos();
+
+	});
+
+	getProductos = () => {
+	  $.ajax({
+		url: `${API_URL}/productos/`,
+		type: 'GET',
+		dataType: 'json',
+		success: function (data) {
+		  $.each(data, function (index, value) {
+			// Llenar la tabla
+			if(value.Categorias_id_categoria == 2) {
+				$("#tablaProductos").append(`<div class="card">
+					<figure>
+						<img
+							src="img/${value.nombre_producto}.jpg"
+							alt="producto"
+						/>
+					</figure>
+					<div class="card-body">
+						<h2 class="text-center">${value.nombre_producto}</h2>
+						<p class="price">${value.valor}</p>
+						<button class="btn btn-primary btn-primary-outline-success text-light">Añadir al carrito</button>
+					</div>
+				</div>`
+			
+				);
+			}
+
+		  });
+		},
+		error: function (error) {
+		  Swal.fire({
+			icon: 'error',
+			title: 'Error',
+			text: 'No se pudo obtener la lista de productos. Por favor, intenta nuevamente.'
+		  });
+		}
+	  });
+	};
+</script>
   </body>
 </html>
 </html>
