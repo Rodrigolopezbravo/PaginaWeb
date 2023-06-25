@@ -4,7 +4,12 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>ADMINprductoss</title>
-    <link rel="stylesheet" href="/adminproduc.css" />
+    <link rel="stylesheet" href="adminproduc.css" />
+        <!-- Bootstrap CSS -->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
+
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+       
   </head>
   <body>
     <nav>
@@ -19,57 +24,375 @@
       <p>ADMINISTRACION DE PRODUCTOS.</p>
     </header>
     <main>
-      <h2>Nuestros productos</h2>
-      <table>
-        <thead>
-          <tr>
-            <th>Producto</th>
-            <th>Descripción</th>
-            <th>Precio</th>
-            <th>Cantidad</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>Producto 1</td>
-            <td>Descripción del producto 1</td>
-            <td>$9.99</td>
-            <td>10</td>
-          </tr>
-          <tr>
-            <td>Producto 2</td>
-            <td>Descripción del producto 2</td>
-            <td>$14.99</td>
-            <td>5</td>
-          </tr>
-          <tr>
-            <td>Producto 3</td>
-            <td>Descripción del producto 3</td>
-            <td>$19.99</td>
-            <td>2</td>
-          </tr>
-        </tbody>
-      </table>
-      <form>
-        <h3>Agregar un nuevo producto</h3>
-        <div>
-          <label for="nombre">Nombre:</label>
-          <input type="text" id="nombre" name="nombre" required />
+      <div class="container">
+
+        <div class="row justify-content-md-center mt-3">
+          <div class="col-sm-6">
+            <div class="card">
+              <div class="card-body">
+                <h5 class="card-title">Registro de Productos</h5>
+        
+                <div class="form-row">
+                  <div class="form-group col-md-6">
+                    <label for="inputNombreProducto">Nombre:</label>
+                    <input type="text" class="form-control" id="inputNombreProducto">
+                  </div>
+                </div>
+        
+                <div class="form-row">
+                  <div class="form-group col-md-6">
+                    <label for="inputValor">Valor:</label>
+                    <input type="text" class="form-control" id="inputValor">
+                  </div>
+                  <div class="form-group col-md-6">
+                    <label for="inputStock">Stock:</label>
+                    <input type="text" class="form-control" id="inputStock">
+                  </div>
+                  <div class="form-group col-md-6">
+                    <label for="inputEstado">Estado:</label>
+                    <input type="text" class="form-control" id="inputEstado">
+                  </div>
+                  
+                </div>
+
+                <div class="form-group">
+                  <label for="inputEspecie">Especie</label>
+                  <select id="inputEspecie" class="form-control" title="-- Seleccionar --">
+                    <option value="" selected>-- Seleccionar --</option>
+                  </select>
+                </div>
+
+                <div class="form-group">
+                  <label for="inputPromocion">Promocion</label>
+                  <select id="inputPromocion" class="form-control" title="-- Seleccionar --">
+                    <option value="" selected>-- Seleccionar --</option>
+                  </select>
+                </div>
+
+                <div class="form-group">
+                  <label for="inputCategoria">Categoria</label>
+                  <select id="inputCategoria" class="form-control" title="-- Seleccionar --">
+                    <option value="" selected>-- Seleccionar --</option>
+                  </select>
+                </div>
+
+
+
+
+
+                <a id="btnAgregarProducto" class="btn btn-primary">Registrar</a>
+                <a class="btn btn-success btnEditarProductoTabla">Editar</a>
+  
+              </div>
+            </div>
+          </div>
+        </div> 
+
+        <div class="row mt-4">
+          <div class="col-sm-12">
+            <div class="card" style="height: 100%;">
+              <div class="card-body">
+  
+                <h5 class="card-title">Listado de Productos</h5>
+  
+                <!-- Tabla de Productos -->
+                <div class="table-responsive">
+                  <table class="table" id="tablaProductos">
+                    <thead class="thead-dark">
+                      <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">Nombre</th>
+                        <th scope="col">Valor</th>
+                        <th scope="col">Stock</th>
+                        <th scope="col">Especie</th>
+                        <th scope="col">Promocion</th>
+                        <th scope="col">Categoria</th>
+                        <th scope="col">Estado</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+  
+                    </tbody>
+                  </table>
+                </div>
+  
+              </div>
+            </div>
+          </div>
         </div>
-        <div>
-          <label for="descripcion">Descripción:</label>
-          <input type="text" id="descripcion" name="descripcion" required />
-        </div>
-        <div>
-          <label for="precio">Precio:</label>
-          <input type="number" id="precio" name="precio" required />
-        </div>
-        <div>
-          <label for="cantidad">Cantidad:</label>
-          <input type="number" id="cantidad" name="cantidad" required />
-        </div>
-        <button type="submit">Agregar</button>
-      </form>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>   
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.min.js" integrity="sha384-+sLIOodYLS7CIrQpBjl+C7nPvqq+FbNUBDunl/OZv93DB7Ln/533i8e/mZXLi/P+" crossorigin="anonymous"></script>
+     
+
+            <!-- sweetalert2 -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <!--- Mis scripts -->
+    <!-- comunes  -->
+    <script src="assets/comunes.js"></script>
+    <script> 
+
+
+        //buscar los productos en la api
+        $(document).ready(function() {
+          //addCard();
+          getProductos();
+          getEspecies();
+          getPromociones();
+          getCategorias();
+        });
+
+        getProductos = () => {
+          $.ajax({
+            url: `${API_URL}/productos/`,
+            type: 'GET',
+            dataType: 'json',
+            success: function (data) {
+              $.each(data, function (index, value) {
+                // Llenar la tabla
+                $("#tablaProductos").append(`<tr>
+                  <th scope="row">${value.id_producto}</th>
+                  <td>${value.nombre_producto}</td>
+                  <td>${value.valor}</td>
+                  <td>${value.stock}</td>
+                  <td>${value.especies_id_especie}
+                    <input type="hidden" name="id_especie" id="id_espcie" value="${value.id_especie}"></td>
+                  <td>${value.promociones_id_promocion}
+                    <input type="hidden" name="id_promocion" id="id_promocion" value="${value.id_promocion}"></td>
+                  <td>${value.Categorias_id_categoria}</td>
+                  <input type="hidden" name="id_categoria" id="id_categoria" value="${value.id_categoria}">
+                  <td>${value.estado}</td>
+
+                  <td>
+                    <div class="btn-group btn-group-sm" role="group" aria-label="Basic example">
+                      <button type="button" class="btn btn-success btnEditarProducto"><i class="fa-solid fa-pencil"></i></button>
+                      <button type="button" class="btn btn-danger btnEliminarProducto"><i class="fa-solid fa-trash"></i></button>
+                    </div>
+                  </td>
+                </tr>`);
+              });
+            },
+            error: function (error) {
+              Swal.fire({
+                icon: 'error',
+                title: 'Error',
+                text: 'No se pudo obtener la lista de productos. Por favor, intenta nuevamente.'
+              });
+            }
+          });
+        }
+        
+        getEspecies = () => {
+          $.ajax({
+            url: `${API_URL}/especies`,
+            type: 'GET',
+            dataType: 'json',
+            success: function(data) {
+              $.each(data, function(index, value) {
+                //llenar el select comunas
+                $("#inputEspecie").append(`<option id="${value.id_especie}" value="${value.id_especie}">${value.nombre_especie}</option>`);
+              });
+
+            }
+          });
+        }
+        getPromociones = () => {
+          $.ajax({
+            url: `${API_URL}/promociones`,
+            type: 'GET',
+            dataType: 'json',
+            success: function(data) {
+              $.each(data, function(index, value) {
+                //llenar el select comunas
+                $("#inputPromocion").append(`<option id="${value.id_promocion}" value="${value.id_promocion}">${value.nombre_promocion}</option>`);
+              });
+
+            }
+          });
+        }
+        getCategorias = () => {
+          $.ajax({
+            url: `${API_URL}/categorias`,
+            type: 'GET',
+            dataType: 'json',
+            success: function(data) {
+              $.each(data, function(index, value) {
+                //llenar el select comunas
+                $("#inputCategoria").append(`<option id="${value.id_categoria}" value="${value.id_categoria}">${value.tipo}</option>`);
+              });
+
+            }
+          });
+        }
+
+
+        //funcionalidad para agregar los usuarios a la tabla
+        $("#btnAgregarProducto").click(function (e) {
+          e.preventDefault();
+        
+          var nombre_producto = $("#inputNombreProducto").val();
+          var valor = $("#inputValor").val();
+          var stock = $("#inputStock").val();
+          var estado = $("#inputEstado").val();
+          var Especies_id_especie = $("#inputEspecie").val();
+          var Promociones_id_promocion = $("#inputPromocion").val();
+          var Categorias_id_categoria = $("#inputCategoria").val();
+
+        
+          var productoData = {
+            nombre_producto: nombre_producto,
+            valor: valor,
+            stock: stock,
+            estado: estado,
+            Especies_id_especie: Especies_id_especie,
+            Promociones_id_promocion: Promociones_id_promocion,
+            Categorias_id_categoria: Categorias_id_categoria
+          };
+          console.log(productoData);
+        
+          $.ajax({
+            url: `${API_URL}/productos`,
+            type: 'POST',
+            //dataType: 'json',
+            data: productoData,
+            success: function (response) {
+              Swal.fire({
+                icon: 'success',
+                title: 'Éxito',
+                text: 'Usuario registrado correctamente.'
+              }).then(() => {
+                // Limpiar los campos del formulario
+                $("#inputNombreProducto").val('');
+                $("#inputValor").val('');
+                $("#inputStock").val('');
+                $("#inputEstado").val('');
+                $("#inputEspecie").val('');
+                $("#inputPromocion").val('');
+                $("#inputCategoria").val('');
+        
+                // Actualizar la tabla de usuarios
+                getProductos();
+              });
+            },
+            error: function (error) {
+              Swal.fire({
+                icon: 'error',
+                title: 'Error',
+                text: 'No se pudo registrar el producto. Por favor, intenta nuevamente.'
+              });
+            }
+          });
+        });
+        
+        function ultimoId(){
+            let ultimoId = $("#tablaProductos tr:last th").text();
+            return parseInt(ultimoId)+1;
+        }
+
+
+
+        
+       // borrar linea
+      $(document).on('click', '.btnEliminarProducto', function () {
+        // Obtener el ID del usuario a eliminar
+        var id_producto = $(this).closest('tr').find('th').text();
+      
+        // Mostrar el mensaje de confirmación utilizando SweetAlert2
+        Swal.fire({
+          title: '¿Estás seguro?',
+          text: 'Esta acción no se puede deshacer',
+          icon: 'warning',
+          showCancelButton: true,
+          confirmButtonText: 'Sí, eliminar',
+          cancelButtonText: 'Cancelar'
+        }).then((result) => {
+          if (result.isConfirmed) {
+            // Enviar la solicitud de borrado
+            $.ajax({
+              url: `${API_URL}/productos/${id_producto}`,
+              type: 'DELETE',
+              success: function (response) {
+                // Mostrar mensaje de éxito
+                Swal.fire({
+                  icon: 'success',
+                  title: 'Eliminado',
+                  text: response
+                }).then(() => {
+                  // Recargar la tabla de productos después de eliminar uno
+                  $("#tablaProductos").empty(); // Vaciar la tabla
+                  getProductos(); // Volver a cargar los productos
+                });
+              },
+              error: function (error) {
+                Swal.fire({
+                  icon: 'error',
+                  title: 'Error',
+                  text: 'No se pudo eliminar el producto. Por favor, intenta nuevamente.'
+                });
+              }
+            });
+          }
+        });
+      });
+      
+
+        //editar producto de la tabla
+        $(document).on('click', '.btnEditarProducto', function (e) {
+          e.preventDefault();
+          // Obtener los datos del usuario desde la fila de la tabla
+          var producto = $(this).closest('tr').find('td');
+
+
+          var nombre_producto = producto.eq(0).text();
+          var valor = producto.eq(1).text();
+          var stock = producto.eq(2).text();
+          var estado = producto.eq(3).text();
+          var Especies_id_especie = producto.eq(4).find('input').val();
+          var Promociones_id_promocion = producto.eq(5).find('input').val();
+          var Categorias_id_categoria = producto.eq(6).find('input').val();
+
+          $("#inputNombreProducto").val(nombre_producto);
+          $("#inputValor").val(valor);
+          $("#inputStock").val(stock);
+          $("#inputEstado").val(estado);
+          $("#inputEspecie").val(Especies_id_especie);
+          $("#inputPromocion").val(Promociones_id_promocion);
+          $("#inputCategoria").val(Categorias_id_categoria);
+        });
+        
+        // Botón editar del formulario
+        $(".btnEditarProductoTabla").click(function (e) {
+
+          // Obtener los datos del formulario
+
+          var nombre_producto = $("#inputNombreProducto").val();
+          var valor = $("#inputValor").val();
+          var estado = $("#inputStock").val();
+          var Especies_id_especie = $("#inputEspecie").val();
+          var Promociones_id_promocion = $("#inputPromocion").val();
+          var Categorias_id_categoria = $("#inputCategoria").val();
+
+          // Crear el objeto con los datos del usuario
+          var productoData = {
+
+            nombre_producto: nombre_producto,
+            valor: valor,
+            estado: estado,
+            Especies_id_especie: Especies_id_especie,
+            Promociones_id_promocion: Promociones_id_promocion,
+            Categorias_id_categoria: Categorias_id_categoria
+          };
+
+        });
+
+
+
+
+
+
+
+    </script>
     </main>
     <footer>
       <ul>
