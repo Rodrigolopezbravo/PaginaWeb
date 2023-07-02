@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta
+			name="viewport"
+			content="width=device-width, initial-scale=1.0"
+		/>
+		<title>Macetero Groot</title>
+		<!-- Bootstrap CSS -->
+		<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.0/font/bootstrap-icons.css">
+		<link rel="stylesheet" href="./css/Herramientas.css">
+	</head>
+	<body>
+	</head>
+	
+		<!--========================================================== -->
+                        <!-- ENCABEZADO -->
+  <!--========================================================== -->
+	<style>
+		/* Estilos para el header */
+		header {
+			background-color: rgba(255, 244, 244, 0.671); /* Color de fondo */
+			height: 80px; /* Altura del header */
+			display: block; /* Convertir el header en un contenedor flexible */
+			align-items: center; /* Alinear verticalmente los elementos dentro del header */
+			justify-content: center; /* Alinear horizontalmente los elementos dentro del header */
+		}
+		
+		/* Estilos para el logo */
+		.logo {
+			height: 50px; /* Altura del logo */
+			width: 150px; /* Ancho del logo */
+		}
+				/* Estilos para el carrito */
+				.carritoicono {
+			height: 50px; /* Altura del logo */
+			width: 50px; /* Ancho del logo */
+			margin-left: 20px; /* margen*/
+		}
+
+
+		/* Estilos para el carrito */
+		.carritoicono {
+			height: 50px; /* Altura del logo */
+			width: 50px; /* Ancho del logo */
+			margin-left: 20px; /* margen*/
+		}
+	</style>
+</head>
+
+<!-- Header -->
+<a href="index.html" style="text-align: center; display: block; background-color: rgba(255, 244, 244, 0.671);">
+  <img src="img/logo.gif" alt="Logo de mi empresa" class="logo">
+</a>
+
+<nav  class="navbar navbar-expand-lg navbar-light p-3 bg-success"  id="menu"> 
+	<div class="container">
+	  <a class="navbar-brand" href="Productos.html">
+		  <span class="fs-5 text-white fw-bold">Plantas</span>
+	  </a>
+	  <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+		<span class="navbar-toggler-icon"></span>
+	  </button>
+
+	  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+		<ul class="navbar-nav me-auto mb-2 mb-lg-0">
+		  <li class="nav-item">
+			<a class="nav-link text-white" aria-current="page" href="Herramientas.html">Herramientas</a>
+		  </li>
+		  <li class="nav-item">
+			<a class="nav-link text-white" href="Accesorios.html">Accesorios</a>
+		  </li>
+		  <li class="nav-item">
+			<a class="nav-link text-white" href="Contacto.html">Contactanos</a>
+		  </li>
+		</ul>
+		<a href="login.html" 
+		<button class="btn btn-primary btn-primary-outline-success text-light" >Ingresar</button>
+	  	</a>
+		  <div class="container-icon">
+			<a href="carritodecompras.html">
+				<img
+						src="img/carrito.ñ.png" 
+						alt="carritoicono" class="carritoicono"
+					/>
+				</a>
+			</svg>
+			</div>
+  </nav>
+  <div class="detalle">
+	<img id="productoImagen" class="imagenProducto" src="" alt="Producto">
+	<div class="detalle-info">
+		<h2 id="productoNombre"></h2>
+		<p id="productoPrecio"></p>
+		<p id="productoStock"></p>
+		<!-- Otros elementos de detalles del producto -->
+	</div>
+</div>
+
+			
+		
+
+		<script src="assets/comunes.js"></script>
+	</body>
+	<footer class="w-100  d-flex  align-items-center justify-content-center flex-wrap">
+		<p class="fs-5 px-3  pt-3">PlantLife. &copy; Todos Los Derechos Reservados 2023.</p>
+		<div id="iconos" >
+			<a href="#"><i class="bi bi-facebook"></i></a>
+			<a href="#"><i class="bi bi-twitter"></i></a>
+			<a href="#"><i class="bi bi-instagram"></i></a>  
+		</div>
+	  </footer>
+	  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+	  <script> 
+
+	
+$(document).ready(function() {
+    getProducto();
+  });
+
+  getProducto = () => {
+    const productoID = localStorage.getItem('productoSeleccionado');
+
+    $.ajax({
+      url: `${API_URL}/productos/${productoID}`,
+      type: 'GET',
+      dataType: 'json',
+      success: function (data) {
+        // Rellenar los detalles del producto en la página
+        $('#productoNombre').text(data.nombre_producto);
+        $('#productoImagen').attr('src', `img/${data.nombre_producto}.jpg`);
+        $('#productoPrecio').text(data.valor);
+		$('#productoStock').text(data.stock);
+		
+        
+      },
+      error: function (error) {
+        Swal.fire({
+          icon: 'error',
+          title: 'Error',
+          text: 'No se pudo obtener el producto. Por favor, intenta nuevamente.'
+        });
+      }
+    });
+  };
+	
+	
+	</script>
