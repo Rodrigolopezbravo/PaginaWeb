@@ -45,8 +45,7 @@
 
 
 	</style>
-</head>
-<body>
+
 
 <!-- Header -->
 <a href="index.html" style="text-align: center; display: block; background-color: rgba(255, 244, 244, 0.671);">
@@ -151,7 +150,9 @@
 						/>
 					</figure>
 					<div class="card-body">
+						<a href="detalleProducto.html" class="product-link" data-id="${value.id_producto}">
 						<h2 class="text-center">${value.nombre_producto}</h2>
+						</a>
 						<p class="price">${value.valor}</p>
 						<button class="btn btn-primary btn-primary-outline-success text-light">Añadir al carrito</button>
 					</div>
@@ -171,7 +172,18 @@
 		}
 	  });
 	};
+
+	$('body').on('click', '.product-link', function(e) {
+    e.preventDefault();
+    const productoID = $(this).data('id');
+
+    // Guardar el ID del producto en localStorage
+    localStorage.setItem('productoSeleccionado', productoID);
+
+    // Redirigir a la página detalleProducto.html
+    window.location.href = 'detalleProducto.html';
+  });
 </script>
-  </body>
+
 </html>
-</html>
+
